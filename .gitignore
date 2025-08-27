@@ -1,0 +1,49 @@
+# ---------- macOS cruft ----------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# ---------- Xcode build artifacts ----------
+build/
+DerivedData/
+*.dSYM
+*.dSYM.zip
+*.log
+
+# ---------- Xcode per-user state (never commit) ----------
+xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# ---------- Xcode workspaces ----------
+*.xcworkspace/xcuserdata/
+
+# ---------- Swift Package Manager (if you use SPM from Xcode) ----------
+.build/
+.swiftpm/
+# Ignore Xcode's SPM workspace state but keep the lockfile
+**/xcshareddata/swiftpm/configuration/
+!**/Package.resolved
+
+# ---------- Editors/IDEs ----------
+.vscode/
+.idea/
+*.iml
+
+# ---------- Misc ----------
+*.swp
+*.swo
