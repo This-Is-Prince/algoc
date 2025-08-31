@@ -9,6 +9,8 @@ This repository is a comprehensive resource for learning and practicing algorith
 	- Covers fundamental C programming concepts, including arrays, functions, pointers, structures, and more. Start here if you're new to C or want to strengthen your basics.
 - [Recursion](recursion/)
 	- Learn how recursion works in C, with examples and exercises to build a strong foundation.
+- [Array](array/)
+	- Dive deep into arrays in C: declaration, initialization, usage, and passing arrays to functions. Includes practical examples and exercises.
 - **Coming Soon:**
 	- ADT (Abstract Data Types)
 	- Trees
