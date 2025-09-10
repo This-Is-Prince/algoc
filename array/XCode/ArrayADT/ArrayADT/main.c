@@ -110,7 +110,8 @@ size_t BinarySearch(Array *arr, int elm) {
 }
 
 int Get(Array *arr, size_t index) {
-    if (index >= 0 && index <= arr->length) {
+    
+    if (index >= 0 && index < arr->length) {
         return arr->A[index];
     }
     
@@ -458,6 +459,65 @@ Array* Difference(Array *s1, Array *s2) {
     return d;
 }
 
+int FindingSingleMissingElement(Array *arr) {
+    if (arr->length > 0) {
+        if (IsSorted(arr)) {
+            size_t i = 0;
+            int curr = 0, next = 0;
+            
+            while (i < arr->length - 1) {
+                curr = arr->A[i];
+                next = arr->A[i + 1];
+                
+                if (curr != next && curr + 1 != next) {
+                    return curr + 1;
+                }
+                
+                i++;
+            }
+        }
+    }
+    
+    return -1;
+}
+
+Array* FindingMultipleMissingElement(Array *arr) {
+    Array *r = CreateArray(arr->length);
+    
+    if (arr->length > 0 && IsSorted(arr)) {
+        size_t i = 0;
+        int curr = 0, next = 0;
+        
+        while (i < arr->length - 1) {
+            curr = arr->A[i];
+            next = arr->A[i + 1];
+            
+            if (curr == next) {
+                i++;
+            } else if (curr + 1 != next) {
+                curr++;
+                while (curr < next) {
+                    Append(r, curr);
+                    curr++;
+                }
+                i++;
+            }
+        }
+    }
+    
+    return r;
+}
+
+void rec(int n) {
+    if (n > 5) {
+        return;
+    }
+    
+    printf("%d, ", n);
+    
+    rec(n + 1);
+}
+
 
 int main(int argc, const char* argv[]) {
     Array *arr = CreateArray(10);
@@ -615,6 +675,9 @@ int main(int argc, const char* argv[]) {
     
     printf("Length of Array: %zu\n", arr->length);
     printf("Size of Array: %zu\n\n", arr->size);
+    
+    printf("\n\n");
+    rec(0);
     
     free(arr->A);
     free(arr);
