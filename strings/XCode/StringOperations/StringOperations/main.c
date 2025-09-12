@@ -12,7 +12,7 @@ typedef struct String String;
 
 String* CreateString(int size) {
     if (size < 0) {
-        perror("Size can't be negative ");
+        perror("Size can't be negative");
         exit(EXIT_FAILURE);
         return NULL;
     }
@@ -218,9 +218,42 @@ String* Duplicates(String *str) {
     
     String *r = CreateString(str->len);
     
+    long int H = 0, x = 0;
+    
+    for (int i = 0; i < str->len; ++i) {
+        x = 1;
+        x = x << (str->s[i] - 97);
+        
+        if ((H & x) > 0) {
+            const char s[1] = {str->s[i]};
+            Append(r, s);
+        } else {
+            H = H | x;
+        }
+    }
+    
     return r;
 }
 
+bool IsAnagram(String *s1, String* s2) {
+    int H[26] = {0};
+    
+    for (int i = 0; i < s1->len; ++i) {
+        H[s1->s[i] - 97]++;
+    }
+    
+    for (int i = 0; i < s2->len; ++i) {
+        H[s2->s[i] - 97]--;
+    }
+    
+    for (int i = 0; i < 26; ++i) {
+        if (H[i] < 0 || H[i] > 0) {
+            return false;
+        }
+    }
+    
+    return true;
+}
 
 int main(int argc, const char* argv[]) {
     String *str = CreateString(10);
@@ -250,10 +283,25 @@ int main(int argc, const char* argv[]) {
     Display(str2);
     printf("Is string equal: %d\n", IsEqual(str1, str2));
     
+    String *ds = CreateString(10);
+    Append(ds, "findinnggg");
+    Display(ds);
+    String *r = Duplicates(ds);
+    Display(r);
+    
+    String *s1 = CreateString(10);
+    Append(s1, "decimal");
+    String *s2 = CreateString(10);
+    Append(s2, "medical");
+    
+    printf("Is anagram: %d\n", IsAnagram(s1, s2));
+    
     Free(str);
     Free(temp);
     Free(str1);
     Free(str2);
+    Free(ds);
+    Free(r);
 
     return 0;
 }
