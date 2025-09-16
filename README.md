@@ -3,6 +3,7 @@ Welcome to the Algorithms and Data Structures in C project!
 
 This repository is a comprehensive resource for learning and practicing algorithms and data structures using the C programming language. The project is organized into chapters, each focusing on a specific topic or concept, starting from the basics of C and progressing to advanced data structures and algorithms.
 
+
 ## Chapters
 
 - [C Concepts](c_concepts/)
@@ -11,8 +12,9 @@ This repository is a comprehensive resource for learning and practicing algorith
 	- Learn how recursion works in C, with examples and exercises to build a strong foundation.
 - [Array](array/)
 	- Dive deep into arrays in C: declaration, initialization, usage, and passing arrays to functions. Includes practical examples and exercises.
+- [String ADT](strings/)
+	- Explore the String Abstract Data Type (ADT) in C. Learn about string operations, manipulation, and implementation details for efficient string handling.
 - **Coming Soon:**
-	- ADT (Abstract Data Types)
 	- Trees
 	- Graphs
 	- Sorting & Searching Algorithms
