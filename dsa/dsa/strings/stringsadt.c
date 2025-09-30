@@ -1,6 +1,14 @@
+//
+//  strings.c
+//  dsa
+//
+//  Created by Prince on 30/09/25.
+//
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include "stringsadt.h"
 
 struct String {
     char *s;
@@ -38,7 +46,7 @@ void Free(String *str) {
     free(str);
 }
 
-void Display(String *str) {
+static void Display(String *str) {
     if (str == NULL || str->s == NULL) {
         return;
     }
@@ -48,7 +56,7 @@ void Display(String *str) {
     printf("%s\n", str->s);
 }
 
-void Append(String *str, const char *s) {
+static void Append(String *str, const char *s) {
     if (str == NULL) {
         return;
     }
@@ -153,7 +161,7 @@ bool IsValidString(String *str) {
     return true;
 }
 
-void Reverse(String *str) {
+static void Reverse(String *str) {
     if (str == NULL || str->s == NULL) {
         return;
     }
@@ -255,7 +263,11 @@ bool IsAnagram(String *s1, String* s2) {
     return true;
 }
 
-int main(int argc, const char* argv[]) {
+void RunStringADT(bool run) {
+    if (!run) {
+        return;
+    }
+    
     String *str = CreateString(10);
     Append(str, "   I     Love     Golang");
     Display(str);
@@ -302,6 +314,4 @@ int main(int argc, const char* argv[]) {
     Free(str2);
     Free(ds);
     Free(r);
-
-    return 0;
 }

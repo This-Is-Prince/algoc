@@ -8,9 +8,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "array.h"
+#include "stringsadt.h"
+#include "linkedlistadt.h"
 
 int main(int argc, const char * argv[]) {
-    RunArray(true);
+    RunArray(false);
+    RunStringADT(false);
+    RunLinkedlistADT(true);
 
     return EXIT_SUCCESS;
 }

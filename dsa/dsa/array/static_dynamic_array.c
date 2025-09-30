@@ -35,7 +35,7 @@ void RunStaticDynamicArray(bool run) {
     
     p = realloc(p, size * sizeof(int));
     
-    q[0] = 33333;
+//    q[0] = 33333;
     for (int i = 0; i < size; ++i) {
         printf("%d,", p[i]);
     }

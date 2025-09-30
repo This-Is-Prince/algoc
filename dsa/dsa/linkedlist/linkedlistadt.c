@@ -1,5 +1,14 @@
+//
+//  linkedlistadt.c
+//  dsa
+//
+//  Created by Prince on 30/09/25.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include "linkedlistadt.h"
 
 typedef struct Node Node;
 typedef struct LinkedListADT LinkedListADT;
@@ -20,7 +29,7 @@ LinkedListADT* CreateLinkedListADT(void) {
     return ll;
 }
 
-void Display(LinkedListADT* ll) {
+static void Display(LinkedListADT* ll) {
     if (ll == NULL) {
         return;
     }
@@ -42,7 +51,7 @@ Node* NewNode(int value) {
     return new_node;
 }
 
-void Append(LinkedListADT* ll, int value) {
+static void Append(LinkedListADT* ll, int value) {
     if (ll == NULL) {
         return;
     }
@@ -85,7 +94,11 @@ void AppendArray(LinkedListADT*ll, int values[], int len) {
 }
 
 
-int main(int argc, const char* argv[]) {
+void RunLinkedlistADT(bool run) {
+    if (!run) {
+        return;
+    }
+    
     LinkedListADT* ll = CreateLinkedListADT();
     Display(ll);
     
@@ -94,6 +107,4 @@ int main(int argc, const char* argv[]) {
     Display(ll);
     
     printf("----------\n");
-    
-    return 0;
 }
