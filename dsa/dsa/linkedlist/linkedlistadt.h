@@ -7,4 +7,4 @@
 
 #include <stdbool.h>
 
-void RunLinkedlistADT(bool run);
+void RunLinkedlistADT(bool);

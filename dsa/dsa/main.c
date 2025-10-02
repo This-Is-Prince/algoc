@@ -10,11 +10,13 @@
 #include "array.h"
 #include "stringsadt.h"
 #include "linkedlistadt.h"
+#include "trees.h"
 
 int main(int argc, const char * argv[]) {
     RunArray(false);
     RunStringADT(false);
-    RunLinkedlistADT(true);
-
+    RunLinkedlistADT(false);
+    RunTrees(true);
+    
     return EXIT_SUCCESS;
 }
