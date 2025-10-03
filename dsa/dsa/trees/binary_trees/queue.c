@@ -73,6 +73,10 @@ Node* Dequeue(Queue* q) {
     q->start_node = q->start_node->next;
     q->size--;
     
+    if (q->size == 0) {
+        q->last_node = NULL;
+    }
+    
     Node* node = first->value;
     free(first);
     
